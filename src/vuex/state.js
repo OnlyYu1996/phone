@@ -3,7 +3,7 @@ const state = {
   user: {
     userName: "OnlyYu",
     upic:
-      "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549994943954&di=19cf826277de5e60452e41584ca37cd6&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0103b259772b9ba8012193a3805824.jpg",
+      "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265531569&di=153901a98ecc6e49c04979c00f0b37d9&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0149485c90b8eea801208f8b301ae7.jpg%402o.jpg",
     age: "22",
     sex: "男",
     phone: "17768110130",
@@ -13,10 +13,10 @@ const state = {
   // 获取当前动态的信息
   contentData: [
     {
-      id: 0,
+      id: 1,
       user: "香蕉有籽",
       upic:
-        "http://img3.imgtn.bdimg.com/it/u=663586512,2476638111&fm=26&gp=0.jpg",
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265610537&di=ed2ceeffdbcf5027c7ee0a45e2f2f4ce&imgtype=0&src=http%3A%2F%2Fatt.bbs.duowan.com%2Fforum%2F201903%2F02%2F134831mn2vvo2zhokykxro.jpg",
       pubtime: "2019-1-3 20:11:19",
       phone: "至尊诺基亚",
       content:
@@ -31,10 +31,10 @@ const state = {
       vuexCommentInfo: []
     },
     {
-      id: 1,
+      id: 2,
       user: "马叉虫",
       upic:
-        "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2912492641,3281101827&fm=26&gp=0.jpg",
+        "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3788618920,3070644572&fm=26&gp=0.jpg",
       pubtime: "2019-1-3 20:11:19",
       phone: "Android",
       content: "我不会帮你，想要什么样的未来……自己去追寻吧！",
@@ -49,10 +49,10 @@ const state = {
       vuexCommentInfo: []
     },
     {
-      id: 2,
+      id: 3,
       user: "青青草原村霸",
       upic:
-        "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2796026073,257149680&fm=26&gp=0.jpg",
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265745690&di=bd9df2e13fd243368f261e829d346e0c&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F622762d0f703918f06438ac3573d269759eec42d.jpg",
       pubtime: "2019-1-3 20:11:19",
       phone: "iPhone",
       content:
@@ -68,6 +68,42 @@ const state = {
       comment: "81",
       vuexCommentInfo: []
     }
-  ]
+  ],
+  // 初始化用户数据,friends为当前对话选中是朋友
+  data: { self: {}, friends: [] },
+  // 被选中或者在聊天中的朋友ID
+  activeID:0,
+  // 添加虚拟数据，id是作为聊天队列的标记，list是聊天内容
+  messageList:[
+    {
+      id: 1,
+      list: [{ id: 1, message: '今天天气挺好啊', time: '14:36' }]
+    }, {
+      id: 2,
+      list: [{ id: 2, message: '周末出去玩吗？', time: '06:05' }]
+    }, {
+      id: 3,
+      list: [{ id: 3, message: '请问你吃饭了吗', time: '12:10' }]
+    }
+  ],
+  // 模拟数据库中正在对话的消息列表
+  messageListCopy:[
+    {
+      id: 1,
+      list: [{ id: 1, message: '你可以和我聊天', time: '14:36' }]
+    }, {
+      id: 2,
+      list: [{ id: 2, message: '我会讲笑话哦', time: '06:05' }]
+    }, {
+      id: 3,
+      list: [{ id: 3, message: '请问你吃饭了吗', time: '12:10' }]
+    }
+  ],
+  // ajax是否结束
+  isAjax:false,
+  // 对话框组件是否渲染
+  dialog:false,
+
+
 };
 export default state;

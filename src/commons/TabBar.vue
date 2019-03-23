@@ -10,7 +10,7 @@
       <mu-icon :value="item.icon"></mu-icon>
       <span class="label">{{item.label}}</span>
     </div>-->
-    <mu-bottom-nav class="tab-bar-item" color="rgba(255, 136, 187,.5)" :value.sync="shift" shift>
+    <mu-bottom-nav class="tab-bar-item" color="rgba(255, 136, 187,.8)" :value.sync="shift" shift>
       <mu-bottom-nav-item value="home" title="主页" icon="home" to="/home"></mu-bottom-nav-item>
       <mu-bottom-nav-item value="message" title="消息" icon="message" to="/message"></mu-bottom-nav-item>
       <mu-bottom-nav-item value="mine" title="我的" icon="perm_identity" to="/mine"></mu-bottom-nav-item>

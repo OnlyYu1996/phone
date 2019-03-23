@@ -8,12 +8,11 @@
       <mu-text-field
         class="appbar-search-field"
         slot="default"
-        focus
         placeholder="请输入好友用户名/手机号"
         @input="input"
         v-model="value"
       />
-      <mu-button icon slot="right" @click="showSearch">
+      <mu-button icon slot="right">
         <mu-icon value="search"></mu-icon>
       </mu-button>
     </mu-appbar>
@@ -22,9 +21,18 @@
     <mu-list>
       <mu-sub-header>搜索结果</mu-sub-header>
       <div v-for="(item,index) of friend" :key="index">
-        <mu-list-item :title="item.name" @click="showPersonIndex_x(item.id)">
-          <mu-avatar :src="item.avatar" slot="leftAvatar"/>
-          <mu-icon value="chat_bubble" slot="right"/>
+        <mu-list-item avatar button  @click="showPersonIndex_x(item.id)">
+          <mu-list-item-action>
+            <mu-avatar>
+              <img :src="item.avatar">
+            </mu-avatar>
+          </mu-list-item-action>
+          <mu-list-item-title>
+            <mu-list-item-title>{{item.name}}</mu-list-item-title>
+          </mu-list-item-title>
+          <mu-list-item-action>
+            <mu-icon value="chat_bubble"></mu-icon>
+          </mu-list-item-action>
         </mu-list-item>
       </div>
     </mu-list>
@@ -38,7 +46,7 @@ export default {
   data() {
     return {
       value: "",
-      friend: []
+      friend: ""
     };
   },
   mounted () {
@@ -47,19 +55,19 @@ export default {
   },
   computed: {
     ...mapState({
+      // 获取所有的朋友列表
       friends: state => state.data.friends
     })
   },
   methods: {
-    ...mapMutations(["showSearch", "showPersonIndex", "getActiveId"]),
+    ...mapMutations(["getActiveID"]),
     back(){
       this.$router.push('/message')
     },
     // 点击打开个人主页
     showPersonIndex_x(id) {
-      this.showSearch();
-      this.getActiveId({ activeId: id });
-      this.showPersonIndex_x();
+      this.getActiveID({ activeID: id });
+      this.$router.push('./person')
     },
     // 输入搜索内容
     input(val) {
@@ -68,9 +76,9 @@ export default {
         this.friend = [];
       } else if (isNaN(val)) {
         // 利用isNaN检测不能强制转换为数字的字符时返回来判断字符true的特点来判断输入的内容非数字，不用Object.is(NaN,val)的原因
-        // 使用过滤器筛选数组
+        // 使用过滤器筛选friends数组
         this.friend = this.friends.filter(x => {
-          if (x.name.indexof(val) !== -1) {
+          if (x.name.indexOf(val) !== -1) {
             return true;
           } else {
             return false;
@@ -79,7 +87,7 @@ export default {
       } else {
         // 输入的内容为数字
         this.friend = this.friends.filter(x => {
-          if (x.phone.indexof(val) !== -1) {
+          if (x.phone.indexOf(val) !== -1) {
             return true;
           } else {
             return false;
@@ -95,10 +103,7 @@ export default {
 .search{
     position: absolute;
     .mu-appbar{
-        background-color: #ccc;
-        .mu-button{
-
-        }
+        background-color: #ff88bb;
     }
 }
 </style>

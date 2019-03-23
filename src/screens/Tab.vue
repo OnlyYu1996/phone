@@ -79,7 +79,7 @@ export default {
     //   this.scrollHeight();
     // },1000)
     // })
-  }
+  },
 };
 </script>
 

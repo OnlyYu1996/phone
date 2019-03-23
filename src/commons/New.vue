@@ -106,7 +106,7 @@ export default {
       open: false,//控制分享窗口弹出
       showCommentInfo:false,//控制评论div弹出
       commentInfo:'',//存储评论内容
-      vuexUser:this.$store.getters.user.userName,//vuex中的评论人物
+      vuexUser:this.$store.getters.user.name,//vuex中的评论人物
       vuexCommentInfo:this.$store.getters.vuexCommentInfo(this.data.user),//vuex中的评论内容
     };
   },

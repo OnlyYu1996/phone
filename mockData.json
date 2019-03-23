@@ -1,0 +1,52 @@
+{
+  "self": {
+    "id": 0,
+    "name": "OnlyYu",
+    "avatar": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265531569&di=153901a98ecc6e49c04979c00f0b37d9&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0149485c90b8eea801208f8b301ae7.jpg%402o.jpg",
+    "age": "23",
+    "sex": "男",
+    "phone": "17768110130",
+    "email": "1158673577@qq.com",
+    "birthday": "1996-01-25",
+    "about": "也许吧，未来……给你了",
+    "address": "浙江"
+  },
+  "friends": [
+    {
+      "id": 1,
+      "name": "香蕉有籽",
+      "avatar": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265610537&di=ed2ceeffdbcf5027c7ee0a45e2f2f4ce&imgtype=0&src=http%3A%2F%2Fatt.bbs.duowan.com%2Fforum%2F201903%2F02%2F134831mn2vvo2zhokykxro.jpg",
+      "about": "你所浪费的今天，是昨天死去的人奢望的明天；你所厌恶的现在，是未来的你回不去的曾经",
+      "email": "1158673578@qq.com",
+      "phone": "15168110100",
+      "birthday": "1996-01-20",
+      "age": "23",
+      "sex": "男",
+      "address": "江苏"
+    },
+    {
+      "id": 2,
+      "name": "马叉虫",
+      "avatar": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3788618920,3070644572&fm=26&gp=0.jpg",
+      "about": "我不会帮你，想要什么样的未来……自己去追寻吧！",
+      "email": "1158673579@qq.com",
+      "phone": "15268110101",
+      "birthday": "1996-01-21",
+      "age": "23",
+      "sex": "男",
+      "address": "广东"
+    },
+    {
+      "id": 3,
+      "name": "青青草原村霸",
+      "avatar": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265745690&di=bd9df2e13fd243368f261e829d346e0c&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F622762d0f703918f06438ac3573d269759eec42d.jpg",
+      "about": "我不需要你的帮忙！未来我会一手开启，什么样的敌人我也不会惧怕……还有，其实我们可以成为朋友的……",
+      "email": "1158673580@qq.com",
+      "phone": "13568110102",
+      "birthday": "1996-01-22",
+      "age": "23",
+      "sex": "男",
+      "address": "江苏"
+    }
+  ]
+}

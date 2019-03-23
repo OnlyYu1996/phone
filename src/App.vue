@@ -12,12 +12,8 @@
 </template>
 
 <script>
-import News from "@/components/New.vue";
 export default {
   name: "App",
-  components: {
-    News
-  },
   data() {
     return {
       enter: "animated fadeInRight",

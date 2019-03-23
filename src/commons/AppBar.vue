@@ -27,6 +27,8 @@ export default {
   align-items: center;
   padding: 0 20px;
   overflow: hidden;
+  font-weight: 500;
+  font-size: 4.5vmin;
 }
 .app-bar .app-bar-title {
   flex: 1;

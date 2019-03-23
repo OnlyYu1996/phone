@@ -7,22 +7,18 @@
       </mu-button>
     </AppBar>
     <div class="content">
-      <New :data="detailData"/>
+      <News :data="detailData"/>
     </div>
   </div>
 </template>
 
 <script>
-import New from "@/components/New";
 export default {
   name:'Detail',
   data() {
     return {
       detailData: {}
     };
-  },
-  components: {
-    New
   },
   created() {
     this.detailData = this.$route.query;
