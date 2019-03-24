@@ -11,7 +11,7 @@
     </AppBar>
     <!-- header end -->
     <div class="content" @scroll="scroll" ref="div1">
-        <!-- 轮播 strat -->
+      <!-- 轮播 strat -->
       <mu-carousel hide-controls transition="fade">
         <mu-carousel-item>
           <img
@@ -29,15 +29,16 @@
           >
         </mu-carousel-item>
       </mu-carousel>
-        <!-- 轮播 end -->
-        <!-- 说说内容 strat -->
+      <!-- 轮播 end -->
+      <!-- 说说内容 strat -->
       <News v-for="(item) in datas" :key="item.id" :data="item" @click="newSelect($event,item)"/>
-        <!-- 说说内容 end -->
-        <!-- 上滑加载内容 strat -->
-      <div class="loading-view" v-if="showLoading">正在加载
+      <!-- 说说内容 end -->
+      <!-- 上滑加载内容 strat -->
+      <div class="loading-view" v-if="showLoading">
+        正在加载
         <mu-circular-progress class="demo-circular-progress" :size="16"></mu-circular-progress>
       </div>
-        <!-- 上滑加载内容 end -->
+      <!-- 上滑加载内容 end -->
     </div>
   </div>
 </template>
@@ -108,13 +109,19 @@ export default {
     from.meta.savedPosition = this.scrollTop;
     next();
   },
+  beforeRouteEnter(to, from, next) {
+    console.log(to.meta.savePosition);
+    // this.$refs.div1.scrollTop=to.meta.savePosition
+    next();
+  },
   methods: {
     scroll(e) {
       //内容总高度-垂直滚动条位置-视口大小
       // const height = e.target.scrollHeight;
       this.scrollTop = e.target.scrollTop;
       // const top = e.target.scrollTop + e.target.clientHeight;
-      this.showLoading = e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight < 3;
+      this.showLoading =
+        e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight < 3;
       this.$route.meta.savedPosition = top;
     },
     goHome() {

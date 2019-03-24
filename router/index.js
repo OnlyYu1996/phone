@@ -6,9 +6,8 @@ import Message from "@/screens/Message";
 import Tab from "@/screens/Tab";
 import Detail from "@/screens/Detail";
 import Search from "@/screens/Search";
-import Dialog from '@/screens/Dialog'
-import PersonIndex from '@/screens/PersonIndex'
-
+import Dialog from "@/screens/Dialog";
+import PersonIndex from "@/screens/PersonIndex";
 
 Vue.use(Router);
 
@@ -19,7 +18,7 @@ export default new Router({
     {
       path: "/",
       component: Tab,
-      name:'tab',
+      name: "tab",
       meta: {
         keepAlive: true,
         savedPosition: ""
@@ -29,16 +28,15 @@ export default new Router({
         {
           path: "home",
           component: Home,
-          name:'home',
+          name: "home",
           meta: {
             keepAlive: true,
             savedPosition: ""
           }
         },
-
         {
           path: "mine",
-          name:'mine',
+          name: "mine",
           meta: {
             keepAlive: true
           },
@@ -46,11 +44,11 @@ export default new Router({
         },
         {
           path: "message",
-          name:'message',
+          name: "message",
           meta: {
             keepAlive: true
           },
-          component: Message,
+          component: Message
         }
       ]
     },
@@ -64,28 +62,28 @@ export default new Router({
       }
     },
     {
-      path: '/search',
-      name: 'search',
+      path: "/search",
+      name: "search",
       component: Search,
       meta: {
-        keepAlive: false,
+        keepAlive: false
       }
     },
     {
-      path:'/dialog',
-      name:'dialog',
-      component:Dialog,
-      meta:{
-        keepAlive:false,
+      path: "/dialog",
+      name: "dialog",
+      component: Dialog,
+      meta: {
+        keepAlive: false
       }
     },
     {
-      path:'/person',
-      name:'person',
-      component:PersonIndex,
-      meta:{
-        keepAlive:false,
+      path: "/person",
+      name: "person",
+      component: PersonIndex,
+      meta: {
+        keepAlive: false
       }
     }
-  ],
+  ]
 });

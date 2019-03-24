@@ -28,7 +28,7 @@ const mutations = {
     // 判断信息是自己的还是机器人的，然后插入队列中
     if (obj.self) {
       // 信息是自己发出的
-      state.messageList.forEach((item, index, arr) => {
+      state.messageList.forEach((item) => {
         if (item.id === obj.id) {
           obj.id = 0;
           item.list.push({ ...obj, time });
@@ -36,7 +36,7 @@ const mutations = {
       });
     } else {
       // 信息是机器人发出的
-      state.messageList.forEach((item, index, arr) => {
+      state.messageList.forEach((item) => {
         if (item.id === obj.id) {
           item.list.push({ ...obj, time });
         }

@@ -24,8 +24,8 @@
       <!--我的对话列表-->
       <mu-list class="selfList" v-if="item.id===0">
         <mu-list-item>
-            <!--该组件为了撑起左边-->
-            <mu-list-item-title class="selfLeft"></mu-list-item-title>
+          <!--该组件为了撑起左边-->
+          <mu-list-item-title class="selfLeft"></mu-list-item-title>
           <mu-list-item-action class="message">
             <span>
               <span class="content" style="color:rgba(0,0,0,.9)">{{item.message}}</span>
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex"
+import { mapGetters } from "vuex";
 export default {
   name: "dialogContent",
   props: ["userData"],
@@ -61,9 +61,9 @@ export default {
   updated() {
     this.$emit("scrollC");
   },
-  methods:{
-    showPersonindex_y (){
-      this.$router.push('./person')
+  methods: {
+    showPersonindex_y() {
+      this.$router.push("./person");
     }
   }
 };
@@ -90,7 +90,7 @@ export default {
   font-size: 4vmin;
   border-radius: 5px;
 }
-.dialogContent .selfList .mu-item .mu-item-title.selfLeft{
-    width: auto
+.dialogContent .selfList .mu-item .mu-item-title.selfLeft {
+  width: auto;
 }
 </style>

@@ -1,12 +1,13 @@
 <template>
   <!--ajax结束之后，有消息才渲染组件-->
-  <mu-list v-if="isAjax && nowMessageList" >
+  <mu-list v-if="isAjax && nowMessageList">
     <div
       v-for="(item , index) of nowMessageList"
       :key="index"
       ref="child"
       @click="getActiveID_x(item.id)"
-      :class="[{swipeLeft:isSwipe[index]},'warp']">
+      :class="[{swipeLeft:isSwipe[index]},'warp']"
+    >
       <mu-list-item avatar button class="list-item">
         <!--头像-->
         <mu-list-item-action>
@@ -32,7 +33,7 @@
       <!--删除按钮，需要阻止事件冒泡-->
       <div class="delete" @click.stop="removeM(item.id)">删除</div>
       <!--此div修复按钮部分不起作用-->
-      <div class="overDelete" @click.stop='removeM(item.id)'></div>
+      <div class="overDelete" @click.stop="removeM(item.id)"></div>
     </div>
   </mu-list>
 </template>
@@ -43,7 +44,7 @@ export default {
   name: "messageList",
   data() {
     return {
-      isSwipe: [false, false, false], // 消息列表的初始状态
+      isSwipe: [false, false, false] // 消息列表的初始状态
     };
   },
   computed: {
@@ -52,18 +53,16 @@ export default {
     ...mapGetters(["nowMessageList"])
   },
   methods: {
-    ...mapMutations([
-       "getActiveID", "zeroRemove", "removeMessage"
-    ]),
+    ...mapMutations(["getActiveID", "zeroRemove", "removeMessage"]),
     // 获取点击选中的friends的ID
     getActiveID_x(id) {
-      this.getActiveID({ activeID:id });
-      this.$router.push('./dialog')
+      this.getActiveID({ activeID: id });
+      this.$router.push("./dialog");
     },
     // 删除消息
     removeM(id) {
       this.removeMessage({ id });
-    },
+    }
   },
   created() {
     setTimeout(() => {
@@ -103,11 +102,11 @@ export default {
             }
           });
           // 点击窗口取消隐藏删除按钮
-          window.addEventListener('click',e=>{
-            if(item.className.indexOf('swipeLeft') !== -1){
-              item.classList.remove('swipeLeft')
+          window.addEventListener("click", e => {
+            if (item.className.indexOf("swipeLeft") !== -1) {
+              item.classList.remove("swipeLeft");
             }
-          })
+          });
         });
       }
     }, 1000);
@@ -116,7 +115,7 @@ export default {
 </script>
 
 <style scoped>
-.mu-list{
+.mu-list {
   overflow: hidden;
   background-color: azure;
   padding: 0;
@@ -136,12 +135,13 @@ export default {
   left: 3px;
   top: -5px;
 }
-.mu-list .warp{
+.mu-list .warp {
   border-bottom: 1px solid rgb(233, 182, 212);
   height: 8vh;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
 }
-.delete,.overDelete{
+.delete,
+.overDelete {
   display: block;
   height: 8vh;
   line-height: 8vh;
@@ -151,16 +151,16 @@ export default {
   font-weight: 500;
   background-color: #b82651;
 }
-.mu-list .warp .delete{
+.mu-list .warp .delete {
   position: relative;
   top: -96%;
   left: 100%;
 }
-.mu-list .warp .overDelete{
+.mu-list .warp .overDelete {
   background-color: transparent;
   position: fixed;
   top: 2%;
-  left:85%;
+  left: 85%;
   z-index: 0;
 }
 .swipeLeft {

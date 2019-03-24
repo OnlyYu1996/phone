@@ -72,38 +72,40 @@ const state = {
   // 初始化用户数据,friends为当前对话选中是朋友
   data: { self: {}, friends: [] },
   // 被选中或者在聊天中的朋友ID
-  activeID:0,
+  activeID: 0,
   // 添加虚拟数据，id是作为聊天队列的标记，list是聊天内容
-  messageList:[
+  messageList: [
     {
       id: 1,
-      list: [{ id: 1, message: '今天天气挺好啊', time: '14:36' }]
-    }, {
+      list: [{ id: 1, message: "今天天气挺好啊", time: "14:36" }]
+    },
+    {
       id: 2,
-      list: [{ id: 2, message: '周末出去玩吗？', time: '06:05' }]
-    }, {
+      list: [{ id: 2, message: "周末出去玩吗？", time: "06:05" }]
+    },
+    {
       id: 3,
-      list: [{ id: 3, message: '请问你吃饭了吗', time: '12:10' }]
+      list: [{ id: 3, message: "请问你吃饭了吗", time: "12:10" }]
     }
   ],
   // 模拟数据库中正在对话的消息列表
-  messageListCopy:[
+  messageListCopy: [
     {
       id: 1,
-      list: [{ id: 1, message: '你可以和我聊天', time: '14:36' }]
-    }, {
+      list: [{ id: 1, message: "你可以和我聊天", time: "14:36" }]
+    },
+    {
       id: 2,
-      list: [{ id: 2, message: '我会讲笑话哦', time: '06:05' }]
-    }, {
+      list: [{ id: 2, message: "我会讲笑话哦", time: "06:05" }]
+    },
+    {
       id: 3,
-      list: [{ id: 3, message: '请问你吃饭了吗', time: '12:10' }]
+      list: [{ id: 3, message: "请问你吃饭了吗", time: "12:10" }]
     }
   ],
   // ajax是否结束
-  isAjax:false,
+  isAjax: false,
   // 对话框组件是否渲染
-  dialog:false,
-
-
+  dialog: false
 };
 export default state;

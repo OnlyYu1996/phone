@@ -1,21 +1,21 @@
 <template>
   <div class="app-bar">
     <div class="app-bar-left">
-        <slot name="left"/>
+      <slot name="left"/>
     </div>
-      <div class="app-bar-title">
-        <slot name="title">{{title}}</slot>
-      </div>
+    <div class="app-bar-title">
+      <slot name="title">{{title}}</slot>
+    </div>
     <div class="app-bar-right">
-        <slot name="right"/>
+      <slot name="right"/>
     </div>
   </div>
 </template>
 <script>
 export default {
-    props:{
-        title:''
-    }
+  props: {
+    title: ""
+  }
 };
 </script>
 <style>
@@ -35,12 +35,13 @@ export default {
   text-align: center;
   color: #fff;
 }
-.app-bar .app-bar-left,.app-bar .app-bar-right{
-    width: 80px;
-    padding: 0;
-    overflow: hidden;
+.app-bar .app-bar-left,
+.app-bar .app-bar-right {
+  width: 80px;
+  padding: 0;
+  overflow: hidden;
 }
-.app-bar .app-bar-left .mu-button.back{
+.app-bar .app-bar-left .mu-button.back {
   margin-left: -5.38889vmin;
 }
 </style>

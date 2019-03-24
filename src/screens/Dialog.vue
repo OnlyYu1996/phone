@@ -31,12 +31,7 @@
       <DialogContent :userData="userData" class="DialogContent" @scrollC="scrollC"/>
       <div class="patch-2"></div>
       <!--锚点，自动滚动到新消息-->
-      <a
-        href="#message"
-        name="message"
-        ref="end"
-        style="height:0;"
-      ></a>
+      <a href="#message" name="message" ref="end" style="height:0;"></a>
     </div>
     <!--footer-->
     <div class="footer" ref="footer">
@@ -104,9 +99,9 @@ export default {
     }
   },
   methods: {
-    ...mapMutations([ "getActiveID","addMessage"]),
+    ...mapMutations(["getActiveID", "addMessage"]),
     showPersonindex_x() {
-      this.$router.push('./person')
+      this.$router.push("./person");
     },
     // 输入框获得焦点时触发
     focus() {

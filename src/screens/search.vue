@@ -21,7 +21,7 @@
     <mu-list>
       <mu-sub-header>搜索结果</mu-sub-header>
       <div v-for="(item,index) of friend" :key="index">
-        <mu-list-item avatar button  @click="showPersonIndex_x(item.id)">
+        <mu-list-item avatar button @click="showPersonIndex_x(item.id)">
           <mu-list-item-action>
             <mu-avatar>
               <img :src="item.avatar">
@@ -49,7 +49,7 @@ export default {
       friend: ""
     };
   },
-  mounted () {
+  mounted() {
     // 搜索框自动获取焦点
     document.getElementsByTagName("input")[0].focus();
   },
@@ -61,13 +61,13 @@ export default {
   },
   methods: {
     ...mapMutations(["getActiveID"]),
-    back(){
-      this.$router.push('/message')
+    back() {
+      this.$router.push("/message");
     },
     // 点击打开个人主页
     showPersonIndex_x(id) {
       this.getActiveID({ activeID: id });
-      this.$router.push('./person')
+      this.$router.push("./person");
     },
     // 输入搜索内容
     input(val) {
@@ -100,10 +100,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.search{
-    position: absolute;
-    .mu-appbar{
-        background-color: #ff88bb;
-    }
+.search {
+  position: absolute;
+  .mu-appbar {
+    background-color: #ff88bb;
+  }
 }
 </style>

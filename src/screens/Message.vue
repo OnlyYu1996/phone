@@ -7,7 +7,7 @@
       </AppBar>-->
       <mu-appbar :zDepth="0" class="messageBar">
         <!--左边头像按钮-->
-        <mu-avatar slot="left" :size="35" @click="showSidebar_x(true)">
+        <mu-avatar slot="left" :size="35">
           <img :src="avatar">
         </mu-avatar>
         <!-- 中间title -->
@@ -16,7 +16,7 @@
         </div>
         <!--右边搜索按钮-->
         <mu-button icon color="white" slot="right" @click="search">
-          <mu-icon />
+          <mu-icon/>
           <mu-icon value="search"></mu-icon>
         </mu-button>
       </mu-appbar>
@@ -58,31 +58,26 @@ export default {
   data() {
     return {
       // 默认显示friends窗口
-      active: 0,
+      active: 0
     };
   },
   // 获取头像
   computed: {
     ...mapState({
-          avatar: state => state.data.self.avatar,
+      avatar: state => state.data.self.avatar
     })
   },
   methods: {
-    ...mapMutations(["showSidebar", "showSearch"]),
-    // 打开侧边栏，显示个人信息
-    showSidebar_x(onOff) {
-      this.showSidebar({ onOff });
-    },
     // 路由跳转到搜索页面
-    search(){
-      this.$router.push('/search')
-    },
-  },
+    search() {
+      this.$router.push("/search");
+    }
+  }
 };
 </script>
 
 <style scope>
-.mu-appbar{
+.mu-appbar {
   height: 11.41667vmin;
   background-color: #ff88bb;
   box-shadow: 0 0 1px 2px #ddd;
@@ -91,14 +86,14 @@ export default {
   overflow: hidden;
   z-index: 10000;
 }
-.mu-appbar .mu-appbar-right{
+.mu-appbar .mu-appbar-right {
   z-index: 100001;
 }
-.title{
+.title {
   padding-right: 12px;
 }
-.title .title-item{
-  margin: 0 auto; 
+.title .title-item {
+  margin: 0 auto;
   width: 48%;
   height: 34px;
   line-height: 34px;
@@ -107,7 +102,7 @@ export default {
   font-weight: 300;
   color: white;
 }
-.content{
+.content {
   border-color: #ddd;
 }
 </style>

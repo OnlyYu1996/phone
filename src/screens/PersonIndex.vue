@@ -65,15 +65,15 @@
       </mu-list>
     </div>
     <div class="footer">
-      <mu-tabs full-width color='#ff88bb' indicator-color="#ff88bb">
+      <mu-tabs full-width color="#ff88bb" indicator-color="#ff88bb">
         <mu-tab>
-          <mu-icon value='phone'></mu-icon>
+          <mu-icon value="phone"></mu-icon>
         </mu-tab>
         <mu-tab>
-          <mu-icon value='videocam'></mu-icon>
+          <mu-icon value="videocam"></mu-icon>
         </mu-tab>
         <mu-tab @click="toDialog">
-          <mu-icon value='chat_bubble'></mu-icon>
+          <mu-icon value="chat_bubble"></mu-icon>
         </mu-tab>
       </mu-tabs>
     </div>
@@ -95,10 +95,10 @@ export default {
       }
     }
   },
-  methods:{
-    toDialog(){
-      this.$store.commit('addMessage')
-      this.$router.push('./dialog')
+  methods: {
+    toDialog() {
+      this.$store.commit("addMessage");
+      this.$router.push("./dialog");
     },
     backMessage() {
       this.$router.push("./message");
@@ -108,7 +108,7 @@ export default {
 </script>
 
 <style scoped>
-.index{
+.index {
   background-color: rgb(218, 227, 230);
 }
 .index .top .bg {
@@ -119,8 +119,8 @@ export default {
   width: 100%;
   height: 100%;
 }
-.index .content .userInfo{
+.index .content .userInfo {
   background-color: rgb(248, 229, 248);
-  margin-bottom: 1vw;  
+  margin-bottom: 1vw;
 }
 </style>

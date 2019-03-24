@@ -29,17 +29,27 @@
         <i>{{data.comment}}评论</i>
         <div class="icon">
           <!--赞按钮-->
-          <mu-button icon small @click="lickClickToRed()" v-if="likeOnOff==false" class='clickGood'>
+          <mu-button icon small @click="lickClickToRed()" v-if="likeOnOff==false" class="clickGood">
             <mu-icon value="thumb_up"></mu-icon>
           </mu-button>
-          <mu-button icon small color="red" 
-          @click="lickClickToWhite()" 
-          v-if="likeOnOff==true" class='clickGood'>
+          <mu-button
+            icon
+            small
+            color="red"
+            @click="lickClickToWhite()"
+            v-if="likeOnOff==true"
+            class="clickGood"
+          >
             <mu-icon value="thumb_up"></mu-icon>
           </mu-button>
           <!--评论按钮-->
-          <mu-button icon small color="gray" class='message-buttom' 
-          @click="showCommentInfo=!showCommentInfo">
+          <mu-button
+            icon
+            small
+            color="gray"
+            class="message-buttom"
+            @click="showCommentInfo=!showCommentInfo"
+          >
             <mu-icon value="message"></mu-icon>
           </mu-button>
           <!--分享按钮-->
@@ -83,13 +93,23 @@
       </div>
     </div>
     <div class="vuexCommentInfo" v-show="this.vuexCommentInfo">
-      <div  v-for="(item) in this.vuexCommentInfo" :key="item.id">
-        {{ item }}</div>
+      <div v-for="(item) in this.vuexCommentInfo" :key="item.id">{{ item }}</div>
     </div>
     <div class="commentInfo" v-show="showCommentInfo">
       <mu-container>
-        <mu-text-field solo autofocus="autofocus" ref="commentInfoText" v-model="commentInfo"  placeholder="说点什么吧..." color='red' multi-line :rows="1" :rows-max="3" @keyup.enter="commentClick()"></mu-text-field>
-      <mu-button color="secondary" small @click="commentClick()">评论</mu-button>
+        <mu-text-field
+          solo
+          autofocus="autofocus"
+          ref="commentInfoText"
+          v-model="commentInfo"
+          placeholder="说点什么吧..."
+          color="red"
+          multi-line
+          :rows="1"
+          :rows-max="3"
+          @keyup.enter="commentClick()"
+        ></mu-text-field>
+        <mu-button color="secondary" small @click="commentClick()">评论</mu-button>
       </mu-container>
     </div>
   </div>
@@ -102,12 +122,12 @@ export default {
   },
   data() {
     return {
-      likeOnOff: false,//控制点赞按钮颜色
-      open: false,//控制分享窗口弹出
-      showCommentInfo:false,//控制评论div弹出
-      commentInfo:'',//存储评论内容
-      vuexUser:this.$store.getters.user.name,//vuex中的评论人物
-      vuexCommentInfo:this.$store.getters.vuexCommentInfo(this.data.user),//vuex中的评论内容
+      likeOnOff: false, //控制点赞按钮颜色
+      open: false, //控制分享窗口弹出
+      showCommentInfo: false, //控制评论div弹出
+      commentInfo: "", //存储评论内容
+      vuexUser: this.$store.getters.user.name, //vuex中的评论人物
+      vuexCommentInfo: this.$store.getters.vuexCommentInfo(this.data.user) //vuex中的评论内容
     };
   },
   methods: {
@@ -122,17 +142,20 @@ export default {
       this.data.like--;
     },
     //分享弹窗
-    closeBottomSheet () {
+    closeBottomSheet() {
       this.open = false;
     },
-    openBotttomSheet () {
+    openBotttomSheet() {
       this.open = true;
     },
     //评论按钮
-    commentClick(){
-        this.$store.commit('vuexCommentInfo',{user:this.data.user,vuexCommentInfo:this.commentInfo})
-        this.data.comment++
-        this.commentInfo="";
+    commentClick() {
+      this.$store.commit("vuexCommentInfo", {
+        user: this.data.user,
+        vuexCommentInfo: this.commentInfo
+      });
+      this.data.comment++;
+      this.commentInfo = "";
     }
   }
 };
@@ -162,7 +185,7 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   height: 60px;
-  position: 
+  position: ;
 }
 .app-news header .title h4 {
   height: 30px;
@@ -222,7 +245,7 @@ export default {
   top: -2vmin;
   right: -60.38889vmin;
 }
-.app-news .footer .icon .container{
+.app-news .footer .icon .container {
   width: 6.11111vmin;
   height: 11.11111vmin;
   margin-top: -7.38889vmin;
@@ -231,12 +254,12 @@ export default {
   top: -4.61111vmin;
   right: 1.38889vmin;
 }
-.app-news .footer .data .icon .mu-button.clickGood{
+.app-news .footer .data .icon .mu-button.clickGood {
   position: relative;
   right: 10px;
-  top: -2.0vmin;
+  top: -2vmin;
 }
-.app-news .footer .data .icon .mu-button.message-buttom{
+.app-news .footer .data .icon .mu-button.message-buttom {
   position: relative;
   left: 2.38889vmin;
   top: -1.61111vmin;
@@ -251,18 +274,18 @@ export default {
 .app-news .commentInfo .mu-input {
   width: 75.16667vmin;
 }
-.app-news .commentInfo .mu-input .mu-text-field{
+.app-news .commentInfo .mu-input .mu-text-field {
   width: 100%;
 }
-.app-news .commentInfo .mu-button{
+.app-news .commentInfo .mu-button {
   min-width: 0;
   width: 13.38889vmin;
 }
-.app-news .vuexCommentInfo{
+.app-news .vuexCommentInfo {
   padding: 0 20px 0 20px;
   color: rgb(26, 60, 170);
 }
-.app-news .vuexCommentInfo div{
+.app-news .vuexCommentInfo div {
   padding-bottom: 5px;
   word-break: break-all;
   word-wrap: break-word;

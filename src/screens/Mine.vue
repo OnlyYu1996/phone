@@ -38,13 +38,13 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import { mapState } from "vuex";
 export default {
-  name:'mine',
-  computed:{
-    ...mapState(['data']),
-    self(){
-      return this.data.self
+  name: "mine",
+  computed: {
+    ...mapState(["data"]),
+    self() {
+      return this.data.self;
     }
   }
 };

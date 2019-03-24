@@ -1,18 +1,18 @@
 <template>
   <div class="tab screen">
-    <div class="tabs" >
-      <div class="scrollToHeight" 
-      v-if="onOff && this.$route.meta.savedPosition"
-      @click.stop="scrollHeight">
-        返回上次浏览的位置
-      </div>
+    <div class="tabs">
+      <div
+        class="scrollToHeight"
+        v-if="onOff && this.$route.meta.savedPosition"
+        @click.stop="scrollHeight"
+      >返回上次浏览的位置</div>
       <keep-alive>
         <router-view v-if="$route.meta.keepAlive"></router-view>
       </keep-alive>
       <router-view v-if="!$route.meta.keepAlive"></router-view>
     </div>
     <!-- <TabBar :data="data"/> -->
-    <TabBar />
+    <TabBar/>
   </div>
 </template>
 
@@ -20,66 +20,52 @@
 export default {
   data() {
     return {
-      // data: [
-      //   {
-      //     id: 0,
-      //     icon: "home",
-      //     label: "首页",
-      //     path: "/home"
-      //   },
-      //   {
-      //     id: 1,
-      //     icon: "message",
-      //     label: "消息",
-      //     path: "/message"
-      //   },
-      //   {
-      //     id: 2,
-      //     icon: "perm_identity",
-      //     label: "我的",
-      //     path: "/mine"
-      //   }
-      // ],
-      onOff:true
+      onOff: true
     };
   },
   methods: {
     //返回之前的滚动高度
-    scrollHeight(){
-      this.onOff=false
+    scrollHeight() {
+      this.onOff = false;
       // document.getElementsByClassName("content")[0].scrollTo(0,this.$route.meta.savedPosition)
-      this.$nextTick(function (){
-        document.getElementsByClassName("content")[0].scrollTop=this.$route.meta.savedPosition
+      this.$nextTick(function() {
+        document.getElementsByClassName(
+          "content"
+        )[0].scrollTop = this.$route.meta.savedPosition;
         // console.log('scrollHeight')
         // console.log(this.$refs.div1)
-      })
+      });
     }
   },
   watch: {
-    $route (to, from) {
+    $route(to, from) {
       // 控制是否显示回到原来浏览位置
-          if(from.name === 'detail'||from.name === 'message'||from.name === 'mine') {
-              this.onOff=true
-              // setTimeout(()=>{
-              //   this.scrollHeight();
-              // },0)
-          // console.log(from)
-              // this.scrollHeight()
-          }else{
-              this.onOff=false
-          }
+      if (
+        from.name === "detail" ||
+        from.name === "message" ||
+        from.name === "mine"
+      ) {
+        this.onOff = true;
+        // setTimeout(()=>{
+        //   this.scrollHeight();
+        // },0)
+        // console.log(from)
+        // this.scrollHeight()
+      } else {
+        this.onOff = false;
+      }
     }
   },
-  activated:function (){
-  //   document.getElementsByClassName("content")[0].scrollTo(0,this.$route.meta.savedPosition)
+  activated: function() {
+    //   document.getElementsByClassName("content")[0].scrollTo(0,this.$route.meta.savedPosition)
     // console.log(this.$refs.div1)
-  // this.scrollHeight();
+    // this.scrollHeight();
     // this.$nextTick(()=>{
     //   setTimeout(()=>{
     //   this.scrollHeight();
     // },1000)
     // })
-  },
+  }
 };
 </script>
 
@@ -94,7 +80,7 @@ export default {
   flex: 1;
   overflow: hidden; /*给tab-bar留出位置*/
 }
-.tab .tabs .scrollToHeight{
+.tab .tabs .scrollToHeight {
   position: absolute;
   top: 10.38889vmin;
   background: -webkit-linear-gradient(#ff88bb, white); /* Safari 5.1 - 6.0 */
