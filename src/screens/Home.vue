@@ -55,7 +55,7 @@ function axios() {
       for (let i = 0; i < 5; i++) {
         datas.push({
           id: ++id,
-          username: "香蕉有籽" + id,
+          user: "香蕉有籽" + id,
           upic:
             "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265610537&di=ed2ceeffdbcf5027c7ee0a45e2f2f4ce&imgtype=0&src=http%3A%2F%2Fatt.bbs.duowan.com%2Fforum%2F201903%2F02%2F134831mn2vvo2zhokykxro.jpg",
           pubtime: "2019-1-3 20:11:19",
@@ -110,7 +110,7 @@ export default {
     next();
   },
   beforeRouteEnter(to, from, next) {
-    console.log(to.meta.savePosition);
+    // console.log(to.meta.savePosition);
     // this.$refs.div1.scrollTop=to.meta.savePosition
     next();
   },

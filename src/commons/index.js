@@ -1,7 +1,6 @@
 /**
  * 注册全局组件
  */
-import News from "@/commons/New.vue";
 import AppBar from "@/commons/AppBar.vue";
 import TabBar from "@/commons/TabBar.vue";
 import BackButton from "@/commons/BackButton.vue";
@@ -11,7 +10,6 @@ import DialogContent from "@/commons/DialogContent";
 
 //使用数组确保唯一性
 const components = {
-  News,
   AppBar,
   TabBar,
   BackButton,
