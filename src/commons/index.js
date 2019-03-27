@@ -1,9 +1,9 @@
 /**
  * 注册全局组件
  */
-import News from "@/commons/New.vue";
 import AppBar from "@/commons/AppBar.vue";
 import TabBar from "@/commons/TabBar.vue";
+import News from "@/commons/New.vue";
 import BackButton from "@/commons/BackButton.vue";
 import Messagelist from "@/commons/MessageList";
 import Friends from "@/commons/Friends.vue";

@@ -16,8 +16,8 @@ export default {
   name: "App",
   data() {
     return {
-      enter: "animated fadeInRight",
-      leave: "animated fadeOutLeft"
+      enter: "",
+      leave: ""
     };
   },
   watch: {
@@ -25,12 +25,15 @@ export default {
     $route(to, from) {
       const toLength = to.fullPath.split("/");
       const fromLength = from.fullPath.split("/");
-      if (toLength > fromLength) {
+      if (to.name==='detail') {
         this.enter = "animated fadeInLeft";
         this.leave = "animated fadeOutRight";
-      } else if (toLength < fromLength) {
+      }if (from.name==='detail') {
         this.enter = "animated fadeInRight";
         this.leave = "animated fadeOutLeft";
+      }if(to.name==='message'){
+        this.enter=''
+        this.leave=''
       }
     }
   }
