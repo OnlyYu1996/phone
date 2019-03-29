@@ -5,7 +5,7 @@ const mutations = {
   },
   // 添加好友动态
   contentData(state, contentData) {
-    state.contentData.push(contentData);
+    state.contentData.push(...contentData);
   },
   // 添加单个好友动态的评论信息
   vuexCommentInfo(state, info) {

@@ -156,8 +156,8 @@ export default {
       });
       this.data.comment++;
       this.commentInfo = "";
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -185,7 +185,7 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   height: 60px;
-  position: ;
+  /* position: ; */
 }
 .app-news header .title h4 {
   height: 30px;
@@ -257,12 +257,12 @@ export default {
 .app-news .footer .data .icon .mu-button.clickGood {
   position: relative;
   right: 10px;
-  top: -2vmin;
+  top: -2.5vmin;
 }
 .app-news .footer .data .icon .mu-button.message-buttom {
   position: relative;
-  left: 2.38889vmin;
-  top: -1.61111vmin;
+  left: 3.38889vmin;
+  top: -2.61111vmin;
 }
 .app-news .commentInfo {
   width: 100%;
@@ -270,6 +270,9 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  /* position: absolute;
+  left: 0;
+  bottom:0; */
 }
 .app-news .commentInfo .mu-input {
   width: 75.16667vmin;

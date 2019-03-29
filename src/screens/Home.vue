@@ -34,17 +34,21 @@
       <News v-for="(item) in datas" :key="item.id" :data="item" @click="newSelect($event,item)"/>
       <!-- 说说内容 end -->
       <!-- 上滑加载内容 strat -->
-      <div class="loading-view" v-if="showLoading">
+
+      <!-- <div class="loading-view" v-if="showLoading">
         正在加载
         <mu-circular-progress class="demo-circular-progress" :size="16"></mu-circular-progress>
-      </div>
+      </div> -->
+      <mu-load-more :loading="loading" @load="load">
+        
+      </mu-load-more>
+
       <!-- 上滑加载内容 end -->
     </div>
   </div>
 </template>
 
 <script>
-import News from "@/commons/New.vue";
 //模拟数据
 function axios() {
   return new Promise((resolve, rejest) => {
@@ -80,24 +84,22 @@ export default {
   data() {
     return {
       datas: this.$store.getters.contentData,
-      showLoading: false, //加载更多开关
+      // showLoading: false, //加载更多开关
       onOff: true, //消除数据重复加载
-      scrollTop: ""
+      scrollTop: "",
+      loading: false,
     };
-  },
-  components: {
-    News
   },
   //侦听是否滑动到最后
   watch: {
-    showLoading(val) {
-      if (this.onOff) {
-        axios.call(this).then(res => {
-          this.datas.push(...res);
-        });
-        this.onOff = false;
-      }
-    },
+    // showLoading(val) {
+    //   if (this.onOff) {
+    //     // axios.call(this).then(res => {
+    //     //   this.$store.commit('contentData',res)
+    //     // });
+    //     this.onOff = false;
+    //   }
+    // },
     onOff(val) {
       setTimeout(() => {
         this.onOff = true;
@@ -109,19 +111,27 @@ export default {
     from.meta.savedPosition = this.scrollTop;
     next();
   },
-  beforeRouteEnter(to, from, next) {
-    console.log(to.meta.savePosition);
-    // this.$refs.div1.scrollTop=to.meta.savePosition
-    next();
-  },
   methods: {
+    load () {
+      console.log('load')
+      this.loading = true;
+      // setTimeout(() => {
+      //   this.loading = false;
+      // console.log('load计时器')
+      // }, 2000)
+      axios.call(this).then(res => {
+          this.$store.commit('contentData',res)
+          this.loading = false;
+        });
+    },
+
     scroll(e) {
       //内容总高度-垂直滚动条位置-视口大小
       // const height = e.target.scrollHeight;
       this.scrollTop = e.target.scrollTop;
-      // const top = e.target.scrollTop + e.target.clientHeight;
-      this.showLoading =
-        e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight < 3;
+      const top = e.target.scrollTop + e.target.clientHeight;
+      // this.showLoading =
+      //   e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight < 3;
       this.$route.meta.savedPosition = top;
     },
     goHome() {

@@ -5,9 +5,9 @@ import AppBar from "@/commons/AppBar.vue";
 import TabBar from "@/commons/TabBar.vue";
 import News from "@/commons/New.vue";
 import BackButton from "@/commons/BackButton.vue";
-import Messagelist from "@/commons/MessageList";
+import Messagelist from "@/commons/MessageList.vue";
 import Friends from "@/commons/Friends.vue";
-import DialogContent from "@/commons/DialogContent";
+import DialogContent from "@/commons/DialogContent.vue";
 
 //使用数组确保唯一性
 const components = {

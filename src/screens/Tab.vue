@@ -6,10 +6,10 @@
         v-if="onOff && this.$route.meta.savedPosition"
         @click.stop="scrollHeight"
       >返回上次浏览的位置</div>
-      <keep-alive>
+      <!-- <keep-alive>
         <router-view v-if="$route.meta.keepAlive"></router-view>
-      </keep-alive>
-      <router-view v-if="!$route.meta.keepAlive"></router-view>
+      </keep-alive>-->
+      <router-view></router-view>
     </div>
     <!-- <TabBar :data="data"/> -->
     <TabBar/>
@@ -27,13 +27,10 @@ export default {
     //返回之前的滚动高度
     scrollHeight() {
       this.onOff = false;
-      // document.getElementsByClassName("content")[0].scrollTo(0,this.$route.meta.savedPosition)
       this.$nextTick(function() {
         document.getElementsByClassName(
           "content"
         )[0].scrollTop = this.$route.meta.savedPosition;
-        // console.log('scrollHeight')
-        // console.log(this.$refs.div1)
       });
     }
   },
@@ -46,26 +43,22 @@ export default {
         from.name === "mine"
       ) {
         this.onOff = true;
-        // setTimeout(()=>{
-        //   this.scrollHeight();
-        // },0)
-        // console.log(from)
-        // this.scrollHeight()
+        this.scrollHeight()
       } else {
         this.onOff = false;
       }
     }
-  },
-  activated: function() {
-    //   document.getElementsByClassName("content")[0].scrollTo(0,this.$route.meta.savedPosition)
-    // console.log(this.$refs.div1)
-    // this.scrollHeight();
-    // this.$nextTick(()=>{
-    //   setTimeout(()=>{
-    //   this.scrollHeight();
-    // },1000)
-    // })
   }
+  // activated: function() {
+  //   document.getElementsByClassName("content")[0].scrollTo(0,this.$route.meta.savedPosition)
+  // console.log(this.$refs.div1)
+  // this.scrollHeight();
+  // this.$nextTick(()=>{
+  //   setTimeout(()=>{
+  //   this.scrollHeight();
+  // },1000)
+  // })
+  // }
 };
 </script>
 
