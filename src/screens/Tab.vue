@@ -1,14 +1,6 @@
 <template>
   <div class="tab screen">
     <div class="tabs">
-      <div
-        class="scrollToHeight"
-        v-if="onOff && this.$route.meta.savedPosition"
-        @click.stop="scrollHeight"
-      >返回上次浏览的位置</div>
-      <!-- <keep-alive>
-        <router-view v-if="$route.meta.keepAlive"></router-view>
-      </keep-alive>-->
       <router-view></router-view>
     </div>
     <!-- <TabBar :data="data"/> -->
@@ -28,9 +20,11 @@ export default {
     scrollHeight() {
       this.onOff = false;
       this.$nextTick(function() {
-        document.getElementsByClassName(
-          "content"
-        )[0].scrollTop = this.$route.meta.savedPosition;
+        if (document.getElementsByClassName("content")[0]) {
+          document.getElementsByClassName(
+            "content"
+          )[0].scrollTop = this.$route.meta.savedPosition;
+        }
       });
     }
   },
@@ -43,22 +37,12 @@ export default {
         from.name === "mine"
       ) {
         this.onOff = true;
-        this.scrollHeight()
+        this.scrollHeight();
       } else {
         this.onOff = false;
       }
     }
   }
-  // activated: function() {
-  //   document.getElementsByClassName("content")[0].scrollTo(0,this.$route.meta.savedPosition)
-  // console.log(this.$refs.div1)
-  // this.scrollHeight();
-  // this.$nextTick(()=>{
-  //   setTimeout(()=>{
-  //   this.scrollHeight();
-  // },1000)
-  // })
-  // }
 };
 </script>
 
@@ -72,19 +56,5 @@ export default {
 .tab .tabs {
   flex: 1;
   overflow: hidden; /*给tab-bar留出位置*/
-}
-.tab .tabs .scrollToHeight {
-  position: absolute;
-  top: 10.38889vmin;
-  background: -webkit-linear-gradient(#ff88bb, white); /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(#ff88bb, white); /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(#ff88bb, white); /* Firefox 3.6 - 15 */
-  background: linear-gradient(#ff88bb, white); /* 标准的语法 */
-  width: 100%;
-  color: white;
-  z-index: 1000;
-  height: 7.38889vmin;
-  text-align: center;
-  cursor: pointer;
 }
 </style>

@@ -38,7 +38,8 @@ export default new Router({
           path: "mine",
           name: "mine",
           meta: {
-            keepAlive: true
+            keepAlive: true,
+            savedPosition: ""
           },
           component: Mine
         },
@@ -49,17 +50,17 @@ export default new Router({
             keepAlive: true
           },
           component: Message
+        },
+        {
+          path: "/detail",
+          name: "detail",
+          component: Detail,
+          meta: {
+            keepAlive: true,
+            savedPosition: ""
+          }
         }
       ]
-    },
-    {
-      path: "/detail",
-      name: "detail",
-      component: Detail,
-      meta: {
-        keepAlive: true,
-        savedPosition: ""
-      }
     },
     {
       path: "/search",
@@ -86,11 +87,11 @@ export default new Router({
       }
     }
   ],
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     } else {
-      return { x: 0, y: 0 }
+      return { x: 0, y: 0 };
     }
   }
 });

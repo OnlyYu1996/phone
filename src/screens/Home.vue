@@ -38,10 +38,8 @@
       <!-- <div class="loading-view" v-if="showLoading">
         正在加载
         <mu-circular-progress class="demo-circular-progress" :size="16"></mu-circular-progress>
-      </div> -->
-      <mu-load-more :loading="loading" @load="load">
-        
-      </mu-load-more>
+      </div>-->
+      <mu-load-more :loading="loading" @load="load"></mu-load-more>
 
       <!-- 上滑加载内容 end -->
     </div>
@@ -72,7 +70,8 @@ function axios() {
             "http://img1.imgtn.bdimg.com/it/u=1518658835,2305511672&fm=26&gp=0.jpg"
           ],
           like: 637,
-          comment: "122"
+          comment: "122",
+          vuexCommentInfo: []
         });
       }
       resolve(datas);
@@ -87,7 +86,7 @@ export default {
       // showLoading: false, //加载更多开关
       onOff: true, //消除数据重复加载
       scrollTop: "",
-      loading: false,
+      loading: false
     };
   },
   //侦听是否滑动到最后
@@ -112,17 +111,17 @@ export default {
     next();
   },
   methods: {
-    load () {
-      console.log('load')
+    load() {
+      console.log("load");
       this.loading = true;
       // setTimeout(() => {
       //   this.loading = false;
       // console.log('load计时器')
       // }, 2000)
       axios.call(this).then(res => {
-          this.$store.commit('contentData',res)
-          this.loading = false;
-        });
+        this.$store.commit("contentData", res);
+        this.loading = false;
+      });
     },
 
     scroll(e) {
