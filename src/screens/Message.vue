@@ -2,9 +2,6 @@
   <div class="page">
     <div class="message_base">
       <!--顶端bar start-->
-      <!-- <AppBar title="消息">
-        
-      </AppBar>-->
       <mu-appbar :zDepth="0" class="messageBar">
         <!--左边头像按钮-->
         <mu-avatar slot="left" :size="35">
@@ -68,7 +65,6 @@ export default {
     })
   },
   methods: {
-    // 路由跳转到搜索页面
     search() {
       this.$router.push("/search");
     }

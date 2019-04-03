@@ -1,15 +1,5 @@
 <template>
   <div class="tab-bar">
-    <!-- <div
-      class="tab-bar-item"
-      v-for="item in data"
-      :key="item.id"
-      :class="{'active':selectIndex === item.id}"
-      @click="click($event,item)"
-    >
-      <mu-icon :value="item.icon"></mu-icon>
-      <span class="label">{{item.label}}</span>
-    </div>-->
     <mu-bottom-nav class="tab-bar-item" color="rgba(255, 136, 187,.8)" :value.sync="shift" shift>
       <mu-bottom-nav-item value="home" title="主页" icon="home" to="/home"></mu-bottom-nav-item>
       <mu-bottom-nav-item value="message" title="消息" icon="message" to="/message"></mu-bottom-nav-item>
@@ -30,12 +20,6 @@ export default {
       // 设置默认选中的图标（当与value值相同时为选中）
       shift: "home"
     };
-  },
-  methods: {
-    // switchPage(item) {
-    //   this.selectIndex = item.id;
-    //   this.$router.push(item.path);
-    // }
   }
 };
 </script>

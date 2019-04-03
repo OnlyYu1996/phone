@@ -22,12 +22,6 @@ export default {
   },
   created() {
     this.detailData = this.$route.query;
-  },
-  //设置路由使用 keep-alive 缓存
-  beforeRouteLeave(to, from, next) {
-    to.meta.keepAlive = true;
-    from.meta.keepAlive = true;
-    next();
   }
 };
 </script>

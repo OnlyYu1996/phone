@@ -3,13 +3,13 @@
     <div class="tabs">
       <router-view></router-view>
     </div>
-    <!-- <TabBar :data="data"/> -->
     <TabBar/>
   </div>
 </template>
 
 <script>
 export default {
+  name:"Tab",
   data() {
     return {
       onOff: true
@@ -55,6 +55,6 @@ export default {
 }
 .tab .tabs {
   flex: 1;
-  overflow: hidden; /*给tab-bar留出位置*/
+  overflow: hidden;
 }
 </style>

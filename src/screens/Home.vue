@@ -34,11 +34,6 @@
       <News v-for="(item) in datas" :key="item.id" :data="item" @click="newSelect($event,item)"/>
       <!-- 说说内容 end -->
       <!-- 上滑加载内容 strat -->
-
-      <!-- <div class="loading-view" v-if="showLoading">
-        正在加载
-        <mu-circular-progress class="demo-circular-progress" :size="16"></mu-circular-progress>
-      </div>-->
       <mu-load-more :loading="loading" @load="load"></mu-load-more>
 
       <!-- 上滑加载内容 end -->
@@ -91,14 +86,6 @@ export default {
   },
   //侦听是否滑动到最后
   watch: {
-    // showLoading(val) {
-    //   if (this.onOff) {
-    //     // axios.call(this).then(res => {
-    //     //   this.$store.commit('contentData',res)
-    //     // });
-    //     this.onOff = false;
-    //   }
-    // },
     onOff(val) {
       setTimeout(() => {
         this.onOff = true;
@@ -114,10 +101,6 @@ export default {
     load() {
       console.log("load");
       this.loading = true;
-      // setTimeout(() => {
-      //   this.loading = false;
-      // console.log('load计时器')
-      // }, 2000)
       axios.call(this).then(res => {
         this.$store.commit("contentData", res);
         this.loading = false;
@@ -126,15 +109,12 @@ export default {
 
     scroll(e) {
       //内容总高度-垂直滚动条位置-视口大小
-      // const height = e.target.scrollHeight;
       this.scrollTop = e.target.scrollTop;
       const top = e.target.scrollTop + e.target.clientHeight;
-      // this.showLoading =
-      //   e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight < 3;
       this.$route.meta.savedPosition = top;
     },
     goHome() {
-      this.$router.go(0); //路由后退0步，相当于刷新当前页面
+      this.$router.go(0); 
     },
     //跳转详情页面
     newSelect(e, item) {

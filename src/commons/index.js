@@ -9,7 +9,6 @@ import Messagelist from "@/commons/MessageList.vue";
 import Friends from "@/commons/Friends.vue";
 import DialogContent from "@/commons/DialogContent.vue";
 
-//使用数组确保唯一性
 const components = {
   News,
   AppBar,

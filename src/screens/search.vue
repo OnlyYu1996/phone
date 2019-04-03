@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <!--搜索导航 start-->
+    <!--搜索导航 -->
     <mu-appbar>
       <mu-button icon @click="back" slot="left">
         <mu-icon value="arrow_back"></mu-icon>
@@ -16,8 +16,7 @@
         <mu-icon value="search"></mu-icon>
       </mu-button>
     </mu-appbar>
-    <!--搜索导航 end-->
-    <!--用户列表 start-->
+    <!--用户列表 -->
     <mu-list>
       <mu-sub-header>搜索结果</mu-sub-header>
       <div v-for="(item,index) of friend" :key="index">
@@ -75,8 +74,6 @@ export default {
         // 输入内容为空
         this.friend = [];
       } else if (isNaN(val)) {
-        // 利用isNaN检测不能强制转换为数字的字符时返回来判断字符true的特点来判断输入的内容非数字，不用Object.is(NaN,val)的原因
-        // 使用过滤器筛选friends数组
         this.friend = this.friends.filter(x => {
           if (x.name.indexOf(val) !== -1) {
             return true;

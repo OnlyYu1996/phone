@@ -58,13 +58,13 @@ export default {
       return message.list;
     }
   },
-  updated() {
-    this.$emit("scrollC");
-  },
   methods: {
     showPersonindex_y() {
       this.$router.push("./person");
     }
+  },
+  updated() {
+    this.$emit("scrollC");
   }
 };
 </script>
