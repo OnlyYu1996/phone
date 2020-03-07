@@ -15,7 +15,7 @@
       <mu-carousel hide-controls transition="fade">
         <mu-carousel-item>
           <img
-            src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4115337452,3157853354&fm=26&gp=0.jpg"
+            src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg"
           >
         </mu-carousel-item>
         <mu-carousel-item>
@@ -54,14 +54,14 @@ function axios() {
           id: ++id,
           user: "香蕉有籽" + id,
           upic:
-            "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265610537&di=ed2ceeffdbcf5027c7ee0a45e2f2f4ce&imgtype=0&src=http%3A%2F%2Fatt.bbs.duowan.com%2Fforum%2F201903%2F02%2F134831mn2vvo2zhokykxro.jpg",
+            "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2841648446,236398816&fm=26&gp=0.jpg",
           pubtime: "2019-1-3 20:11:19",
           phone: "至尊诺基亚",
           content:
             "你所浪费的今天，是昨天死去的人奢望的明天；你所厌恶的现在，是未来的你回不去的曾经",
           photos: [
-            "http://img4.imgtn.bdimg.com/it/u=1092471999,2314884673&fm=11&gp=0.jpg",
-            "http://img0.imgtn.bdimg.com/it/u=567300397,2420452001&fm=11&gp=0.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=1518658835,2305511672&fm=26&gp=0.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=1518658835,2305511672&fm=26&gp=0.jpg",
             "http://img1.imgtn.bdimg.com/it/u=1518658835,2305511672&fm=26&gp=0.jpg"
           ],
           like: 637,

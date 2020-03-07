@@ -3,7 +3,7 @@ const state = {
   user: {
     userName: "OnlyYu",
     upic:
-      "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265531569&di=153901a98ecc6e49c04979c00f0b37d9&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0149485c90b8eea801208f8b301ae7.jpg%402o.jpg",
+      "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2841648446,236398816&fm=26&gp=0.jpg",
     age: "22",
     sex: "男",
     phone: "17768110130",
@@ -16,14 +16,14 @@ const state = {
       id: 1,
       user: "香蕉有籽",
       upic:
-        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553265610537&di=ed2ceeffdbcf5027c7ee0a45e2f2f4ce&imgtype=0&src=http%3A%2F%2Fatt.bbs.duowan.com%2Fforum%2F201903%2F02%2F134831mn2vvo2zhokykxro.jpg",
+        "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2841648446,236398816&fm=26&gp=0.jpg",
       pubtime: "2019-1-3 20:11:19",
       phone: "至尊诺基亚",
       content:
         "你所浪费的今天，是昨天死去的人奢望的明天；你所厌恶的现在，是未来的你回不去的曾经",
       photos: [
-        "http://img4.imgtn.bdimg.com/it/u=1092471999,2314884673&fm=11&gp=0.jpg",
-        "http://img0.imgtn.bdimg.com/it/u=567300397,2420452001&fm=11&gp=0.jpg",
+        "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1963304009,2816364381&fm=26&gp=0.jpg",
+        "https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1208538952,1443328523&fm=26&gp=0.jpg",
         "http://img1.imgtn.bdimg.com/it/u=1518658835,2305511672&fm=26&gp=0.jpg"
       ],
       like: 637,
@@ -39,9 +39,9 @@ const state = {
       phone: "Android",
       content: "我不会帮你，想要什么样的未来……自己去追寻吧！",
       photos: [
-        "http://img5.imgtn.bdimg.com/it/u=1660787257,3879458168&fm=200&gp=0.jpg",
+        "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1091579268,2185400060&fm=26&gp=0.jpg",
         "http://img1.imgtn.bdimg.com/it/u=2193513751,1625826462&fm=26&gp=0.jpg",
-        "http://img5.imgtn.bdimg.com/it/u=1660787257,3879458168&fm=200&gp=0.jpg",
+        "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1091579268,2185400060&fm=26&gp=0.jpg",
         "http://img1.imgtn.bdimg.com/it/u=2193513751,1625826462&fm=26&gp=0.jpg"
       ],
       like: 83,
@@ -58,11 +58,11 @@ const state = {
       content:
         "我不需要你的帮忙！未来我会一手开启，什么样的敌人我也不会惧怕……还有，其实我们可以成为朋友的……",
       photos: [
-        "http://img5.imgtn.bdimg.com/it/u=2840274407,2113439854&fm=11&gp=0.jpg",
+        "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1089874897,1268118658&fm=26&gp=0.jpg",
         "http://img1.imgtn.bdimg.com/it/u=2193513751,1625826462&fm=26&gp=0.jpg",
         "http://img1.imgtn.bdimg.com/it/u=2156417650,855603087&fm=26&gp=0.jpg",
         "http://img1.imgtn.bdimg.com/it/u=2193513751,1625826462&fm=26&gp=0.jpg",
-        "http://img0.imgtn.bdimg.com/it/u=567300397,2420452001&fm=11&gp=0.jpg"
+        "https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1208538952,1443328523&fm=26&gp=0.jpg"
       ],
       like: 460,
       comment: "81",
