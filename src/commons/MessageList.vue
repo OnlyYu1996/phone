@@ -12,7 +12,7 @@
         <!--头像-->
         <mu-list-item-action>
           <mu-avatar>
-            <img :src="item.friend.avatar">
+            <img :src="item.friend.avatar" />
           </mu-avatar>
         </mu-list-item-action>
         <!--最后一次对话的信息-->
@@ -153,7 +153,7 @@ export default {
 }
 .mu-list .warp .delete {
   position: relative;
-  top: -96%;
+  top: -106%;
   left: 100%;
 }
 .mu-list .warp .overDelete {

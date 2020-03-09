@@ -30,6 +30,7 @@ export default {
   overflow: hidden;
   font-weight: 500;
   font-size: 4.5vmin;
+  margin-top: 10px;
 }
 .app-bar .app-bar-title {
   flex: 1;

@@ -96,6 +96,7 @@ export default {
   text-align: center;
   border-radius: 4px;
   font-weight: 300;
+  font-size: 4.54444vmin;
   color: white;
 }
 .content {

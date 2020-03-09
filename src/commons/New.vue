@@ -3,7 +3,7 @@
     <div @click="$emit('click',$event)" class="app-news-title">
       <header>
         <mu-avatar size="40" color="#ddd">
-          <img :src="data.upic">
+          <img :src="data.upic" />
         </mu-avatar>
         <div class="title">
           <h4>{{data.user}}</h4>
@@ -19,7 +19,7 @@
       <p>{{data.content}}</p>
       <div class="photos">
         <div class="photo" v-for="(item,index) in data.photos" :key="index">
-          <img :src="item">
+          <img :src="item" />
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
             <mu-icon value="message"></mu-icon>
           </mu-button>
           <!--分享按钮-->
-          <mu-container>
+          <mu-container class="share-container-btn">
             <mu-flex justify-content="center">
               <mu-button icon small color="gray" @click="openBotttomSheet">
                 <mu-icon value="share"></mu-icon>
@@ -156,8 +156,8 @@ export default {
       });
       this.data.comment++;
       this.commentInfo = "";
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
@@ -234,7 +234,7 @@ export default {
 .app-news .footer .data .mu-button {
   position: relative;
   top: 1.3vmin;
-  left: -0.7vmin;
+  left: 1.3vmin;
 }
 .app-news .footer .data {
   padding: 0 5px;
@@ -263,6 +263,9 @@ export default {
   position: relative;
   left: 3.38889vmin;
   top: -2.61111vmin;
+}
+.app-news .footer .data .mu-button {
+  top: -0.7vmin;
 }
 .app-news .commentInfo {
   width: 100%;
